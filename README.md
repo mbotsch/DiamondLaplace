@@ -1,6 +1,6 @@
 # Diamond Laplace
 
-This repository contains the implementation of the paper Bunge, Botsch, Alexa, "The Diamond Laplace for Polygonal and Polyhedral Meshes", Symposium on Geometry Processing 2021.
+This repository contains the implementation of the paper [Bunge, Botsch, Alexa, "The Diamond Laplace for Polygonal and Polyhedral Meshes", Symposium on Geometry Processing 2021](https://ls7-gv.cs.tu-dortmund.de/downloads/publications/2021/sgp21.pdf).
 
 Since we use the [pmp-library](http://www.pmp-library.org/) and [OpenVolumeMesh](https://www.graphics.rwth-aachen.de/software/openvolumemesh/) as submodules, you have to clone the repository recursively:
 
