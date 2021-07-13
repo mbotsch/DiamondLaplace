@@ -1,0 +1,6 @@
+[submodule "external/OpenVolumeMesh"]
+	path = external/OpenVolumeMesh
+	url = https://www.graphics.rwth-aachen.de:9000/OpenVolumeMesh/OpenVolumeMesh.git
+[submodule "external/pmp-library"]
+	path = external/pmp-library
+	url = git@github.com:pmp-library/pmp-library.git
