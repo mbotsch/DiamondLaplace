@@ -12,6 +12,6 @@ Configure and build:
 
 This will automatically build our code and all dependencies. Finally, start the app with a polygon mesh or a polyhedral mesh:
 
-    ./diamond_laplacian ../data/boar.obj
+    ./diamond_laplacian ../data/Surface/boar.obj
 
 Have fun!
