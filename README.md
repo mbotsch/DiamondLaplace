@@ -1,4 +1,4 @@
-# Diamond Laplace
+# Diamond Laplace 🔷
 
 This repository contains the implementation of the paper [Bunge, Botsch, Alexa, "The Diamond Laplace for Polygonal and Polyhedral Meshes", Symposium on Geometry Processing 2021](https://ls7-gv.cs.tu-dortmund.de/downloads/publications/2021/sgp21.pdf).
 
@@ -13,5 +13,6 @@ Configure and build:
 This will automatically build our code and all dependencies. Finally, start the app with a polygon mesh or a polyhedral mesh:
 
     ./diamond_laplacian ../data/Surface/boar.obj
+    ./diamond_laplacian ../data/Volume/bunny.mesh
 
 Have fun!
