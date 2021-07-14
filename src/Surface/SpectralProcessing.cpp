@@ -4,7 +4,6 @@
 //=============================================================================
 #include "SpectralProcessing.h"
 #include "LaplaceConstruction.h"
-#include <Spectra/MatOp/SparseGenMatProd.h>
 #include <iostream>
 #include <Eigen/Sparse>
 //=============================================================================

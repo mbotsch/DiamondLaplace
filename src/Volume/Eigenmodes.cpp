@@ -14,6 +14,8 @@
 #include <Spectra/Util/GEigsMode.h>
 #include <fstream>
 
+using namespace Spectra;
+
 //=============================================================================
 
 enum VolumePoints
@@ -73,26 +75,25 @@ double solve_eigenvalue_problem(VolumeMesh &mesh, Eigen::VectorXd &evalues,
     igl::slice(M, in, in, M_in_in);
 
     // Construct matrix operation object using the wrapper class SparseGenMatProd
-    Spectra::SparseSymMatProd<double> op(S_in_in);
-    Spectra::SparseCholesky<double> Bop(M_in_in);
-
+    SparseSymMatProd<double> op(S_in_in);
+    SparseCholesky<double> Bop(M_in_in);
     int num_eval = 34;
     int converge_speed = 5 * num_eval;
 
     // Construct generalized eigen solver object, requesting the smallest generalized eigenvalues
-
-    Spectra::SymGEigsSolver<
-        double, Spectra::SMALLEST_MAGN, Spectra::SparseSymMatProd<double>,
-        Spectra::SparseCholesky<double>, Spectra::GEIGS_CHOLESKY>
-        geigs(&op, &Bop, num_eval, converge_speed);
+    SymGEigsSolver<
+        SparseSymMatProd<double>,
+        SparseCholesky<double>, 
+        GEigsMode::Cholesky>
+        geigs(op, Bop, num_eval, converge_speed);
 
     // Initialize and compute
     geigs.init();
-    geigs.compute();
+    geigs.compute(SortRule::SmallestMagn);
 
-    Eigen::VectorXd evectors, analytic;
     // Retrieve results
-    if (geigs.info() == Spectra::SUCCESSFUL)
+    Eigen::VectorXd evectors, analytic;
+    if (geigs.info() == CompInfo::Successful)
     {
         evalues = geigs.eigenvalues();
         evectors = geigs.eigenvectors();

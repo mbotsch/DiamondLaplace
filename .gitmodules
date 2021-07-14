@@ -4,3 +4,6 @@
 [submodule "external/pmp-library"]
 	path = external/pmp-library
 	url = git@github.com:pmp-library/pmp-library.git
+[submodule "external/spectra"]
+	path = external/spectra
+	url = https://github.com/yixuan/spectra.git
